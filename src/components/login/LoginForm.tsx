@@ -14,12 +14,15 @@ const LoginForm: React.FC<P> = (props) => {
         <div className="login-container">
             <MyContext.Consumer>
                 {(context) => {
+                    // context will download data for currently selected language
                     const form = context.state[context.state.lang].login;
                     return (
                         <div className="login-form">
+
                             <div className="login-title">
                                 {form.title}
                             </div>
+
                             <form onSubmit={handleSubmit}>
                                 <div className="login-input-fields">
                                     <input type="text" id="email" name="email" placeholder={form.email} />
@@ -31,6 +34,7 @@ const LoginForm: React.FC<P> = (props) => {
                                 </div>
                                 <button>{form.button}</button>
                             </form>
+
                         </div>
                     )
                 }}

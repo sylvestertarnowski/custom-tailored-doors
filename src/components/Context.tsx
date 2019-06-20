@@ -11,7 +11,7 @@ class MyProvider extends React.Component<any, any> {
                 language: "Select language:"
             },
             login: {
-                title: "Login",
+                title: "Log in",
                 email: "Email address",
                 password: "Password",
                 checkbox: "Keep me logged in",
