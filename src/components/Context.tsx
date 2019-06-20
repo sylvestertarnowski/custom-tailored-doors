@@ -5,7 +5,7 @@ export const MyContext = React.createContext<any | null>(null);
 
 class MyProvider extends React.Component<any, any> {
     readonly state = {
-        lang: 'en',
+        lang: 'pl',
         en: {
             header: {
                 language: "Select language:"
@@ -36,10 +36,10 @@ class MyProvider extends React.Component<any, any> {
         return (
             <MyContext.Provider value={{
                 state: this.state,
-                langEn: () => this.setState({
+                en: () => this.setState({
                     lang: 'en',
                 }),
-                langPl: () => this.setState({
+                pl: () => this.setState({
                     lang: 'pl',
                 }),
             }}>

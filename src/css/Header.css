@@ -9,6 +9,7 @@
 .header-width-wrapper {
     width: 1366px;
     display: flex;
+    align-items: center;
 }
 
 .header img {
@@ -20,4 +21,21 @@
 .header .select {
     margin-left: auto;
     margin-right: 201px;
+}
+
+.select label {
+    font-size: 14px;
+    color: #7E7E7E;
+    margin-right: 20px;
+}
+
+.header select {
+    height: 32px;
+    width: 112px;
+    box-sizing: border-box;
+    border: 1px solid #909090;
+    border-radius: 3px;
+    font-size: 14px;
+    color: #7E7E7E;
+    padding-left: 16px;
 }
