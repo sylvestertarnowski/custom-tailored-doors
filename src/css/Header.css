@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 3px 12px rgba(201,201,201, 0.16);
+    padding-top: 18px;
+    padding-bottom: 15px;
+}
+
+.header-width-wrapper {
+    width: 1366px;
+    display: flex;
+}
+
+.header img {
+    height: 47px;
+    width: 47px;
+    margin-left: 107px;
+}
+
+.header .select {
+    margin-left: auto;
+    margin-right: 201px;
+}

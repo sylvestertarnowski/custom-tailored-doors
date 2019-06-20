@@ -1,24 +1,28 @@
 import * as React from 'react';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import LoginForm from './login/LoginForm';
-import LoginScreen from './login/LoginScreen';
+import DesignMain from './design/DesignMain';
+import Header from './Header';
+import '../css/Main.css';
 
 
 
 class Main extends React.Component {
-    routing = (
-        <Router>
-            <div>
-                <Route exact path="/" component={LoginForm} />
-                <Route path="/door-design" component={LoginScreen} />
-            </div>
-        </Router>
-    )
+    readonly state = {
+        isLoggedIn: false,
+    }
+
+    handleSubmit = (event: any) => {
+        event.preventDefault();
+        this.setState({
+            isLoggedIn: true,
+        })
+    }
+
     render() {
         return (
-            <div>
-            <div>Hello World!</div>
-            {this.routing}
+            <div className="main-container">
+            <Header />
+            {this.state.isLoggedIn ? <DesignMain /> : <LoginForm handleSubmit={this.handleSubmit} /> }
             </div>
         )
     }
