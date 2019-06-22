@@ -4,6 +4,16 @@ import '../css/Header.css';
 import { MyContext } from './Context';
 
 class Header extends React.Component {
+    static contextType = MyContext;
+    readonly state = {
+        lang: 'en',
+    }
+
+    handleChange = (e: any) => {
+        this.setState({
+            lang: e.target.value,
+        }, this.context[e.target.value])
+    }
 
     render() {
         return (
@@ -13,7 +23,7 @@ class Header extends React.Component {
                     <MyContext.Consumer>
                         {(context) => {
                             const header = context.state[context.state.lang].header;
-                            const nextLang = context.state.lang === "en" ? "pl" : "en";
+
                             return (
                                 <div className="select">
                                     <label htmlFor="lang">
@@ -22,8 +32,8 @@ class Header extends React.Component {
                                     <select
                                         id="lang"
                                         name="lang"
-                                        value={context.state.lang}
-                                        onChange={context[nextLang]} 
+                                        value={this.state.lang}
+                                        onChange={this.handleChange} 
                                     >
                                         <option value="en">English</option>
                                         <option value="pl">Polski</option>
