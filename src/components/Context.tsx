@@ -17,6 +17,9 @@ class MyProvider extends React.Component<any, any> {
                 checkbox: "Keep me logged in",
                 button: "Login",
             },
+            error: {
+                message: "Invalid email or password"
+            },
         },
         pl: {
             header: {
@@ -29,6 +32,9 @@ class MyProvider extends React.Component<any, any> {
                 checkbox: "Nie wylogowuj mnie",
                 button: "Zaloguj",
             },
+            error: {
+                message: "Niepoprawny email lub hasło"
+            }
         },
         displayLoginError: false,
     } as any;

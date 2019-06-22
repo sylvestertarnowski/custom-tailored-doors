@@ -7,10 +7,12 @@ const LoginError: React.FC = () => {
         <div className="login-error-container">
             <MyContext.Consumer>
                 {(context) => {
+                    const error = context.state[context.state.lang].error;
+
                     return (
                         <div className="login-error-message">
                             <span>
-                                Invalid email or password
+                                {error.message}
                             </span>
                             <button
                                 className="error-message-button"

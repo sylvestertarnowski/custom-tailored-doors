@@ -41,7 +41,6 @@ class Main extends React.Component {
         let response = await this.sendLoginCredentials(event)
         .then(res => res.json())
         .then(res => {
-    
             if (res.status === "200 OK") {
                 console.log(res.status);
                 return true;
