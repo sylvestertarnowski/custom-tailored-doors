@@ -3,10 +3,13 @@ import LoginForm from './login/LoginForm';
 import DesignMain from './design/DesignMain';
 import Header from './Header';
 import '../css/Main.css';
+import LoginError from './login/LoginError';
+import { MyContext } from './Context';
 
 
 
 class Main extends React.Component {
+    static contextType = MyContext;
     readonly state = {
         isLoggedIn: false,
         transition: false,
@@ -34,27 +37,39 @@ class Main extends React.Component {
         })
     }
 
-    checkIfLoginIsCorrect = (event: any) => {
-        this.sendLoginCredentials(event)
+    checkIfLoginIsCorrect = async (event: any): Promise<boolean> => {     
+        let response = await this.sendLoginCredentials(event)
+        .then(res => res.json())
         .then(res => {
-            if (res.status === 200) {
+    
+            if (res.status === "200 OK") {
                 console.log(res.status);
+                return true;
             } else {
                 console.log(res.status);
+                return false;
             }
         })
-        .catch(err => console.log(err))
+        return response;
     }
 
-    handleSubmit = (event: any) => {
+    handleSubmit = async (event: any) => {
         event.preventDefault();
-        this.checkIfLoginIsCorrect(event)
+        let check = await this.checkIfLoginIsCorrect(event);
+        console.log(check);
+        check ?
+        this.setState({
+            isLoggedIn: true,
+        }) : this.context.toggleLoginError();
+        
     }
 
     render() {
+        const { displayLoginError } = this.context.state;
         return (
             <div className="main-container">
             <Header />
+            {displayLoginError && <LoginError />}
             {this.state.isLoggedIn ? <DesignMain /> : <LoginForm handleSubmit={this.handleSubmit} /> }
             </div>
         )

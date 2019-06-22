@@ -1,0 +1,37 @@
+.login-error-container {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 81px;
+    width: 100%;
+    background-color: #F24E33;
+    color: #FFFFFF;
+}
+
+.login-error-message {
+    display: flex;
+    justify-content: center;
+    width: 1366px;
+    box-sizing: border-box;
+}
+
+.login-error-message span {
+    font-size: 16px;
+    align-self: center;
+    justify-self: center;
+}
+
+.error-message-button {
+    position: fixed;
+    top: 26px;
+    left: 95%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: inherit;
+    color: inherit;
+    font-size: 24px;
+    font-weight: 300;
+}

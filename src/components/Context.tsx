@@ -30,7 +30,8 @@ class MyProvider extends React.Component<any, any> {
                 button: "Zaloguj",
             },
         },
-    }
+        displayLoginError: false,
+    } as any;
 
     componentDidMount = () => {
         let lang = window.navigator.language.substr(0, 2);
@@ -54,6 +55,9 @@ class MyProvider extends React.Component<any, any> {
                 }),
                 pl: () => this.setState({
                     lang: 'pl',
+                }),
+                toggleLoginError: () => this.setState((state: any) => {
+                    return {displayLoginError: !state.displayLoginError}
                 }),
             }}>
                 {this.props.children}
