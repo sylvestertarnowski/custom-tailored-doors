@@ -13,6 +13,9 @@ const translations = {
         error: {
             message: "Invalid email or password",
         },
+        loading: {
+            message: "Processing..."
+        },
     },
     pl: {
         header: {
@@ -27,6 +30,9 @@ const translations = {
         },
         error: {
             message: "Niepoprawny email lub hasło",
+        },
+        loading: {
+            message: "Przetwarzanie..."
         },
     },
 }

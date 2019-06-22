@@ -1,0 +1,32 @@
+.loading-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(173, 178, 181, 0.87);
+}
+
+.loading-bar-container .content-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.loading-message {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 1);
+    text-align: center; 
+    margin-bottom: 47px;
+}
+
+.loading-progress-bar {
+    height: 32px;
+    width: 501px;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 1);
+    margin-bottom: 32px;
+}

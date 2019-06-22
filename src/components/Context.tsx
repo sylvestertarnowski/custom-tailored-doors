@@ -23,17 +23,19 @@ class MyProvider extends React.Component<any, any> {
             })
         }
     }
+
+    setLang = (targetLang: string) => {
+        this.setState({
+            lang: targetLang,
+        })
+    }
     
     render() {
         return (
             <MyContext.Provider value={{
                 state: this.state,
-                en: () => this.setState({
-                    lang: 'en',
-                }),
-                pl: () => this.setState({
-                    lang: 'pl',
-                }),
+                en: () => this.setLang('en'),
+                pl: () => this.setLang('pl'),
                 toggleLoginError: () => this.setState((state: any) => {
                     return {displayLoginError: !state.displayLoginError}
                 }),

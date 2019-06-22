@@ -5,6 +5,7 @@ import Header from './Header';
 import '../css/Main.css';
 import LoginError from './login/LoginError';
 import { MyContext } from './Context';
+import LoadingBar from './login/LoadingBar';
 
 
 
@@ -69,6 +70,7 @@ class Main extends React.Component {
             <div className="main-container">
             <Header />
             {displayLoginError && <LoginError />}
+            <LoadingBar />
             {this.state.isLoggedIn ? <DesignMain /> : <LoginForm handleSubmit={this.handleSubmit} /> }
             </div>
         )
