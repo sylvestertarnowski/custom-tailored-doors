@@ -6,7 +6,20 @@ import { MyContext } from './Context';
 class Header extends React.Component {
     static contextType = MyContext;
     readonly state = {
-        lang: 'en',
+        lang: this.context.state.lang,
+    }
+
+    componentDidMount = () => {
+        let lang = window.navigator.language.substr(0, 2);
+        if (lang === "pl") {
+            this.setState({
+                lang: 'pl',
+            })
+        } else {
+            this.setState({
+                lang: 'en',
+            })
+        }
     }
 
     handleChange = (e: any) => {

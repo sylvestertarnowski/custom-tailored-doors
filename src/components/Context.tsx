@@ -5,7 +5,7 @@ export const MyContext = React.createContext<any | null>(null);
 
 class MyProvider extends React.Component<any, any> {
     readonly state = {
-        lang: 'pl',
+        lang: 'en',
         en: {
             header: {
                 language: "Select language:"
