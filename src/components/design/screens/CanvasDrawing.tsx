@@ -26,12 +26,23 @@ class CanvasDrawing extends React.Component<any, any> {
             border: `7px solid ${colors[color]}`,
             height: `${height}px`,
             width: `${width}px`,
+            gridTemplateColumns: `repeat(${posts + 1}, 1fr)`,
         } as React.CSSProperties
+
+        const addDivs = () => {
+            let total = (beams + 1) * (posts + 1);
+            let divs: any[] = [];
+            for(let i = 0; i < total; i++) {
+                divs.push(<div className="door-rectangle" style={{border: `3px solid ${colors[color]}`,}}/>)
+            }
+            return divs;
+        }
+        const divs = addDivs();
 
         const doorDrawing = <div
             className="door-drawing"
             style={{ ...doorStyle }}
-        ></div>
+        >{divs}</div>
 
         const doubleWidth = width * 2;
 
