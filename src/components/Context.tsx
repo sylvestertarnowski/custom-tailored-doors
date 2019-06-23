@@ -9,6 +9,7 @@ class MyProvider extends React.Component<any, any> {
         lang: 'en',
         ...translations,
         displayLoginError: false,
+        transition: false,
     };
 
     componentDidMount = () => {
@@ -29,6 +30,14 @@ class MyProvider extends React.Component<any, any> {
             lang: targetLang,
         })
     }
+
+    toggleTransition = () => {
+        this.setState((state: any) => {
+            return {
+                transition: !state.transition,
+            }
+        })
+    }
     
     render() {
         return (
@@ -39,6 +48,10 @@ class MyProvider extends React.Component<any, any> {
                 toggleLoginError: () => this.setState((state: any) => {
                     return {displayLoginError: !state.displayLoginError}
                 }),
+                clearLoginError: () => this.setState({
+                    displayLoginError: false,
+                }),
+                toggleTransition: () => this.toggleTransition(),
             }}>
                 {this.props.children}
             </MyContext.Provider>

@@ -2,6 +2,7 @@ const translations = {
     en: {
         header: {
             language: "Select language:",
+            organization: "My organization",
         },
         login: {
             title: "Log in",
@@ -16,10 +17,29 @@ const translations = {
         loading: {
             message: "Processing..."
         },
+        design: {
+            navButtons: {
+                one: {
+                    step: "STEP 1",
+                    desc: "CHOOSE DOOR",
+                },
+                two: {
+                    step: "STEP 2",
+                    desc: "CHOOSE DOOR DIVISION",
+                },
+                three: {
+                    step: "STEP 3",
+                    desc: "CHOOSE COLOR",
+                },
+                next: "NEXT STEP",
+                prev: "BACK",
+            }
+        }
     },
     pl: {
         header: {
             language: "Wybierz język:",
+            organization: "Moja organizacja",
         },
         login: {
             title: "Logowanie",
@@ -34,6 +54,24 @@ const translations = {
         loading: {
             message: "Przetwarzanie..."
         },
+        design: {
+            navButtons: {
+                one: {
+                    step: "KROK 1",
+                    desc: "WYBIERZ DRZWI",
+                },
+                two: {
+                    step: "KROK 2",
+                    desc: "WYBIERZ PODZIAŁ DRZWI",
+                },
+                three: {
+                    step: "KROK 3",
+                    desc: "WYBIERZ KOLOR",
+                },
+                next: "NAST. KROK",
+                prev: "WSTECZ",
+            }
+        }
     },
 }
 

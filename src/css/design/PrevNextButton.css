@@ -1,0 +1,27 @@
+.nav-next-btn {
+    display: flex;
+    background-color: rgba(111, 145, 170, 1);
+    border: 2px solid rgba(111, 145, 170, 1);
+    color: rgba(255, 255, 255, 1);
+    font-size: 14px;
+    height: 31px;
+    width: 126px;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-prev-btn {
+    display: flex;
+    background-color: rgba(255, 255, 255, 1);
+    border: 2px solid rgba(111, 145, 170, 1);
+    color: rgba(111, 145, 170, 1);
+    font-size: 14px;
+    height: 31px;
+    width: 126px;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-next-btn:hover, .nav-prev-btn:hover {
+    cursor: pointer;
+}

@@ -24,9 +24,30 @@
 }
 
 .loading-progress-bar {
+    display: flex;
     height: 32px;
     width: 501px;
     border-radius: 40px;
     border: 1px solid rgba(255, 255, 255, 1);
-    margin-bottom: 32px;
+    margin-bottom: 50%;
+}
+
+.progress-fill {
+    align-self: center;
+    display: flex;
+    background-color: white;
+    border-radius: 40px;
+    height: 75%;
+    width: 0%;
+    margin: 0 5px;
+    color: rgba(255, 255, 255, 0);
+}
+
+.progress-fill span {
+    color: rgba(173, 178, 181, 0.87);
+    text-align: right;
+    justify-self: flex-end;
+    margin-left: auto;
+    align-self: center;
+    padding-right: 5px;
 }

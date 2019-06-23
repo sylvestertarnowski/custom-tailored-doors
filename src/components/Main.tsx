@@ -14,6 +14,23 @@ class Main extends React.Component {
     readonly state = {
         isLoggedIn: false,
         transition: false,
+        rememberLogin: false,
+    }
+
+    componentDidMount = () => {
+        const localLoginStatus = localStorage.getItem('rememberLogin');
+        if (localLoginStatus === 'true') {
+            this.setState({
+                isLoggedIn: true,
+            })
+        }
+    }
+
+    componentDidUpdate = () => {
+        const { rememberLogin } = this.state;
+        if (rememberLogin) {
+            localStorage.setItem('rememberLogin', 'true');
+        }
     }
 
     sendLoginCredentials = async (event: any): Promise<Response> => {
@@ -43,10 +60,8 @@ class Main extends React.Component {
         .then(res => res.json())
         .then(res => {
             if (res.status === "200 OK") {
-                console.log(res.status);
                 return true;
             } else {
-                console.log(res.status);
                 return false;
             }
         })
@@ -55,22 +70,24 @@ class Main extends React.Component {
 
     handleSubmit = async (event: any) => {
         event.preventDefault();
+        const rememberLogin: boolean = event.target.remember.checked;
+        this.context.toggleTransition();
         let check = await this.checkIfLoginIsCorrect(event);
-        console.log(check);
         check ?
         this.setState({
             isLoggedIn: true,
-        }) : this.context.toggleLoginError();
-        
+            rememberLogin: rememberLogin,
+        }, () => this.context.toggleTransition(this.context.clearLoginError())) : 
+        this.context.toggleLoginError(this.context.toggleTransition());
     }
 
     render() {
-        const { displayLoginError } = this.context.state;
+        const { displayLoginError, transition } = this.context.state;
         return (
             <div className="main-container">
             <Header />
             {displayLoginError && <LoginError />}
-            <LoadingBar />
+            {transition && <LoadingBar />}
             {this.state.isLoggedIn ? <DesignMain /> : <LoginForm handleSubmit={this.handleSubmit} /> }
             </div>
         )

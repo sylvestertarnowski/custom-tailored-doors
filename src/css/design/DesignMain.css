@@ -1,0 +1,13 @@
+.design-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.design-navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 360px;
+    align-self: center;
+    margin-top: 22px;
+}
