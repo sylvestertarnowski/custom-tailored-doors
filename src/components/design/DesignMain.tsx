@@ -1,19 +1,35 @@
 import * as React from 'react';
-import DesignNavButton from './DesignNavButton';
 import '../../css/design/DesignMain.css';
 import ScreenOne from './screens/ScreenOne';
 import ScreenTwo from './screens/ScreenTwo';
 import ScreenThree from './screens/ScreenThree';
+import DesignNav from './DesignNav';
 
 class DesignMain extends React.Component {
     readonly state = {
         currentScreen: 'one',
+        type: 'single',
+        width: 120,
+        height: 250,
+        beams: 4,
+        colorValue: "black",
+        black: "rgba(0, 0, 0, 1)",
+        grey: "rgba(121, 116, 116, 1)",
+        white: "rgba(244, 242, 242, 1)",
+
     }
 
     handleClick = (e: React.MouseEvent) => {
         const id = e.currentTarget.id;
         this.setState({
             currentScreen: id,
+        })
+    }
+
+    handleChange = (e: any) => {
+        const { name, value } = e.target;
+        this.setState({
+            [name]: value,
         })
     }
 
@@ -51,19 +67,23 @@ class DesignMain extends React.Component {
         const { currentScreen } = this.state;
         let screen: React.ReactNode;
         if (currentScreen === 'one') {
-            screen = <ScreenOne 
+            screen = <ScreenOne
+                handleChange={this.handleChange}
+                doorData={this.state}
                 currentScreen={currentScreen}
                 prevStep={this.prevStep}
                 nextStep={this.nextStep}
             />
         } else if (currentScreen === 'two') {
-            screen = <ScreenTwo 
+            screen = <ScreenTwo
+                doorData={this.state}
                 currentScreen={currentScreen}
                 prevStep={this.prevStep}
                 nextStep={this.nextStep}
             />
         } else if (currentScreen === 'three') {
-            screen = <ScreenThree 
+            screen = <ScreenThree
+                doorData={this.state}
                 currentScreen={currentScreen}
                 prevStep={this.prevStep}
                 nextStep={this.nextStep}
@@ -73,9 +93,10 @@ class DesignMain extends React.Component {
         return (
             <div className="design-main-container">
                 <div className="design-navigation">
-                    <DesignNavButton active={currentScreen} id="one" handleClick={this.handleClick} />
-                    <DesignNavButton active={currentScreen} id="two" handleClick={this.handleClick} />
-                    <DesignNavButton active={currentScreen} id="three" handleClick={this.handleClick} />
+                    <DesignNav
+                        currentScreen={currentScreen}
+                        handleClick={this.handleClick}
+                    />
                 </div>
                 <div className="design-screen-container">
                     {screen}

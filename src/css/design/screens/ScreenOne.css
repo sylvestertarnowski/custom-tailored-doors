@@ -1,0 +1,55 @@
+.door-type div span,
+.door-size div span {
+    font-size: 14px;
+    color: rgba(132, 140, 147, 1);
+}
+
+.door-type .title,
+.door-size .title {
+    border-bottom: 1px solid rgba(247, 247, 247, 1);
+    box-sizing: border-box;
+    padding-bottom: 6.5px;
+    margin-bottom: 16.5px;
+}
+
+.door-type,
+.door-size {
+    width: 153px;
+}
+
+.door-type-inputs {
+    margin-bottom: 22px;
+}
+
+.door-type-inputs div {
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.door-size input[type=number] {
+    width: 44px;
+    height: 24px;
+    font-size: 12px;
+    color: rgba(132, 140, 147, 1);
+    margin: 0;
+    margin-left: auto;
+    box-sizing: border-box;
+    padding: 4px 7px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.door-size-input {
+    display: flex;
+    margin-bottom: 9px;
+    align-items: center;
+}
+
+.cm {
+    margin-left: 5px;
+    margin-right: 10%;
+}

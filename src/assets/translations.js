@@ -33,6 +33,18 @@ const translations = {
                 },
                 next: "NEXT STEP",
                 prev: "BACK",
+            },
+            screenOne: {
+                type: {
+                    title: "Door type",
+                    single: "Single door",
+                    double: "Double door",
+                },
+                size: {
+                    title: "Door size",
+                    width: "Width",
+                    height: "Height",
+                }
             }
         }
     },
@@ -70,6 +82,18 @@ const translations = {
                 },
                 next: "NAST. KROK",
                 prev: "WSTECZ",
+            },
+            screenOne: {
+                type: {
+                    title: "Typ drzwi",
+                    single: "Pojedyncze drzwi",
+                    double: "Podwójne drzwi",
+                },
+                size: {
+                    title: "Rozmiar drzwi",
+                    width: "Szerokość",
+                    height: "Wysokość",
+                }
             }
         }
     },
