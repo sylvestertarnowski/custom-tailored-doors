@@ -45,6 +45,11 @@ const translations = {
                     width: "Width",
                     height: "Height",
                 }
+            },
+            screenTwo: {
+                title: "Door division",
+                beams: "Number of beams",
+                posts: "Number of posts",
             }
         }
     },
@@ -94,6 +99,11 @@ const translations = {
                     width: "Szerokość",
                     height: "Wysokość",
                 }
+            },
+            screenTwo: {
+                title: "Podział drzwi",
+                beams: "Liczba belek",
+                posts: "Liczba słupów",
             }
         }
     },

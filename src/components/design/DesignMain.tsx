@@ -5,18 +5,18 @@ import ScreenTwo from './screens/ScreenTwo';
 import ScreenThree from './screens/ScreenThree';
 import DesignNav from './DesignNav';
 
-class DesignMain extends React.Component {
+class DesignMain extends React.Component<any, any> {
     readonly state = {
-        currentScreen: 'one',
+        currentScreen: 'two', //change to one
         type: 'single',
         width: 120,
         height: 250,
         beams: 4,
+        posts: 2,
         colorValue: "black",
         black: "rgba(0, 0, 0, 1)",
         grey: "rgba(121, 116, 116, 1)",
         white: "rgba(244, 242, 242, 1)",
-
     }
 
     handleClick = (e: React.MouseEvent) => {
@@ -30,6 +30,24 @@ class DesignMain extends React.Component {
         const { name, value } = e.target;
         this.setState({
             [name]: value,
+        })
+    }
+
+    handleIncrement = (e: any) => {
+        const { name } = e.target;
+        this.setState((state: any) => {
+            return {
+                [name]: state[name] + 1
+            }
+        })
+    }
+
+    handleDecrement = (e: any) => {
+        const { name } = e.target;
+        this.setState((state: any) => {
+            return {
+                [name]: state[name] - 1
+            }
         })
     }
 
@@ -76,6 +94,8 @@ class DesignMain extends React.Component {
             />
         } else if (currentScreen === 'two') {
             screen = <ScreenTwo
+                handleIncrement={this.handleIncrement}
+                handleDecrement={this.handleDecrement}
                 doorData={this.state}
                 currentScreen={currentScreen}
                 prevStep={this.prevStep}

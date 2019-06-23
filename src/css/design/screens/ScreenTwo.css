@@ -1,0 +1,49 @@
+.door-division {
+    font-size: 14px;
+    color: rgba(132, 140, 147, 1);
+    width: 206px;
+}
+
+.door-division .title {
+    padding-bottom: 6.5px;
+    border-bottom: 1px solid rgba(247, 247, 247, 1);
+    margin-bottom: 6.5px;
+}
+
+.division-values-container {
+    display: flex;
+    margin-top: 6px;
+    align-items: center;
+}
+
+.division-value {
+    display: flex;
+    margin: 0;
+    margin-left: auto;
+    box-sizing: border-box;
+    height: 24px;
+    width: 24px;
+    font-size: 12px;
+    border: 1px solid rgba(168, 165, 165, 1);
+    justify-content: center;
+    align-items: center;
+}
+
+.division-change-value {
+    display: flex;
+    margin: 0;
+    margin-left: 4px;
+    box-sizing: border-box;
+    height: 23px;
+    width: 24px;
+    font-size: 12px;
+    color: rgba(132, 140, 147, 1);
+    background-color: rgba(205, 219, 229, 1);
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.division-change-value:hover {
+    cursor: pointer;
+}
