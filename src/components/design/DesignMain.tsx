@@ -1,12 +1,13 @@
 import * as React from 'react';
 import DesignNavButton from './DesignNavButton';
 import '../../css/design/DesignMain.css';
-import PrevNextButton from './PrevNextButton';
+import ScreenOne from './screens/ScreenOne';
+import ScreenTwo from './screens/ScreenTwo';
+import ScreenThree from './screens/ScreenThree';
 
 class DesignMain extends React.Component {
     readonly state = {
         currentScreen: 'one',
-
     }
 
     handleClick = (e: React.MouseEvent) => {
@@ -47,19 +48,37 @@ class DesignMain extends React.Component {
     }
 
     render() {
+        const { currentScreen } = this.state;
+        let screen: React.ReactNode;
+        if (currentScreen === 'one') {
+            screen = <ScreenOne 
+                currentScreen={currentScreen}
+                prevStep={this.prevStep}
+                nextStep={this.nextStep}
+            />
+        } else if (currentScreen === 'two') {
+            screen = <ScreenTwo 
+                currentScreen={currentScreen}
+                prevStep={this.prevStep}
+                nextStep={this.nextStep}
+            />
+        } else if (currentScreen === 'three') {
+            screen = <ScreenThree 
+                currentScreen={currentScreen}
+                prevStep={this.prevStep}
+                nextStep={this.nextStep}
+            />
+        }
+
         return (
             <div className="design-main-container">
                 <div className="design-navigation">
-                    <DesignNavButton active={this.state.currentScreen} id="one" handleClick={this.handleClick} />
-                    <DesignNavButton active={this.state.currentScreen} id="two" handleClick={this.handleClick} />
-                    <DesignNavButton active={this.state.currentScreen} id="three" handleClick={this.handleClick} />
+                    <DesignNavButton active={currentScreen} id="one" handleClick={this.handleClick} />
+                    <DesignNavButton active={currentScreen} id="two" handleClick={this.handleClick} />
+                    <DesignNavButton active={currentScreen} id="three" handleClick={this.handleClick} />
                 </div>
                 <div className="design-screen-container">
-                    <div className="design-canvas">{this.state.currentScreen}</div>
-                    <div className="design-data-inputs">
-                        <PrevNextButton direction="prev" handleClick={this.prevStep} />
-                        <PrevNextButton direction="next" handleClick={this.nextStep} />
-                    </div>
+                    {screen}
                 </div>
             </div>
         )

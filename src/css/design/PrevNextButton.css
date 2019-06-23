@@ -20,6 +20,7 @@
     width: 126px;
     justify-content: center;
     align-items: center;
+    margin-right: 13px;
 }
 
 .nav-next-btn:hover, .nav-prev-btn:hover {

@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 1000px;
+    align-self: center;
 }
 
 .design-navigation {
@@ -10,4 +12,32 @@
     width: 360px;
     align-self: center;
     margin-top: 22px;
+    margin-bottom: 19px;
+}
+
+.design-screen-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: 472px;
+    box-sizing: border-box;
+}
+
+.design-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.data-inputs {
+    margin-left: 29px;
+}
+
+.data-input-navigation {
+    display: flex;
+    margin-left: 33px;
+}
+
+.design-canvas {
+    box-sizing: border-box;
+    border: 1px solid rgba(230, 230, 230, 1);
 }
