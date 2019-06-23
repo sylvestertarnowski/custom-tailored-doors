@@ -1,0 +1,82 @@
+.door-drawing-container {
+    display: flex;
+    margin-top: 10px;
+}
+.door-drawing:first-of-type {
+    margin-right: 2px;
+}
+
+.horizontal-line-short {
+    width: 14px;
+    height: 2px;
+    border-top: 2px solid #707070;
+    box-sizing: border-box;
+    align-self: center;
+}
+
+.metric-line-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.metric-line-horizontal {
+    display: flex;
+    margin-left: 28px;
+}
+
+.bottom-metric-group {
+    display: flex;
+}
+
+.metric-line-horizontal-bottom-left {
+    display: flex;
+    flex-grow: 1;
+    margin-left: 30px;
+    margin-top: 12.5px;
+    margin-right: 2px;
+}
+.metric-line-horizontal-bottom-right {
+    display: flex;
+    margin: 0 2px;
+    margin-top: 12.5px;
+    flex-grow: 1;
+}
+
+
+.vertical-line-short {
+    width: 2px;
+    height: 20px;
+    border-left: 2px solid #707070;
+    box-sizing: border-box;
+}
+
+.vertical-line-long {
+    border-left: 2px solid #707070;
+    box-sizing: border-box;
+    flex-grow: 1;
+    align-self: center;
+}
+
+.horizontal-line-long {
+    border-bottom: 2px solid #707070;
+    box-sizing: border-box;
+    flex-grow: 1;
+    align-self: center;
+}
+
+.vertical-desc {
+    transform: rotate(90deg);
+    background: white;
+    border: 2px solid #707070;
+    padding: 1px 2px;
+    font-size: 12px;
+    color: #848C93;
+}
+
+.horizontal-desc {
+    background: white;
+    border: 2px solid #707070;
+    padding: 1px 2px;
+    font-size: 12px;
+    color: #848C93;
+}

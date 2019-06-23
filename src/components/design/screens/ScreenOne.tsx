@@ -2,23 +2,20 @@ import * as React from 'react';
 import PrevNextButton from '../PrevNextButton';
 import { MyContext } from '../../Context';
 import '../../../css/design/screens/ScreenOne.css';
+import CanvasDrawing from './CanvasDrawing';
 
 class ScreenOne extends React.Component<any, any> {
     render() {
-        const { currentScreen, nextStep, doorData, handleChange } = this.props;
+        const { nextStep, doorData, handleChange } = this.props;
 
         return (
             <React.Fragment>
                 <div className="design-canvas">
-                    Screen {currentScreen}
-                    <ul>
-                        <li>Type: {doorData.type}</li>
-                        <li>Width: {doorData.width}</li>
-                        <li>Height: {doorData.height}</li>
-                        <li>Beams: {doorData.beams}</li>
-                        <li>Posts: {doorData.posts}</li>
-                        <li>Color: {doorData.colorValue}</li>
-                    </ul>
+                    <div className="dimension-choice">
+                        <div className="three-d">3D</div>
+                        <div className="two-d">2D</div>
+                    </div>
+                    <CanvasDrawing doorData={doorData}/>
                 </div>
                 <div className="design-data">
                     <div className="data-inputs">
@@ -60,8 +57,7 @@ class ScreenOne extends React.Component<any, any> {
                                                 <span>{size.width}</span>
                                                 <input 
                                                     type="number" 
-                                                    name="width" 
-                                                    max={999}
+                                                    name="width"
                                                     value={doorData.width}
                                                     onChange={handleChange}/>
                                                 <span className="cm">cm</span>
@@ -71,7 +67,6 @@ class ScreenOne extends React.Component<any, any> {
                                                 <input 
                                                     type="number"
                                                     name="height"
-                                                    max={999}
                                                     value={doorData.height}
                                                     onChange={handleChange}/>
                                                 <span className="cm">cm</span>

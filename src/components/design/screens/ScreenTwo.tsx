@@ -2,23 +2,20 @@ import * as React from 'react';
 import PrevNextButton from '../PrevNextButton';
 import { MyContext } from '../../Context';
 import '../../../css/design/screens/ScreenTwo.css';
+import CanvasDrawing from './CanvasDrawing';
 
 class ScreenThree extends React.Component<any, any> {
     render() {
-        const { currentScreen, prevStep, nextStep, doorData, handleIncrement, handleDecrement } = this.props;
+        const { prevStep, nextStep, doorData, handleIncrement, handleDecrement } = this.props;
 
         return (
             <React.Fragment>
                 <div className="design-canvas">
-                    Screen {currentScreen}
-                    <ul>
-                        <li>Type: {doorData.type}</li>
-                        <li>Width: {doorData.width}</li>
-                        <li>Height: {doorData.height}</li>
-                        <li>Beams: {doorData.beams}</li>
-                        <li>Posts: {doorData.posts}</li>
-                        <li>Color: {doorData.colorValue}</li>
-                    </ul>
+                    <div className="dimension-choice">
+                        <div className="three-d">3D</div>
+                        <div className="two-d">2D</div>
+                    </div>
+                    <CanvasDrawing doorData={doorData} />
                 </div>
                 <div className="design-data">
                     <div className="data-inputs">
@@ -32,14 +29,14 @@ class ScreenThree extends React.Component<any, any> {
                                             <div className="division-values-container">
                                                 <span>{division.beams}</span>
                                                 <div className="division-value">{doorData.beams}</div>
-                                                <button 
+                                                <button
                                                     className="division-change-value"
                                                     name="beams"
                                                     onClick={handleIncrement}
                                                 >
                                                     +
                                                 </button>
-                                                <button 
+                                                <button
                                                     className="division-change-value"
                                                     name="beams"
                                                     onClick={handleDecrement}
@@ -50,14 +47,14 @@ class ScreenThree extends React.Component<any, any> {
                                             <div className="division-values-container">
                                                 <span>{division.posts}</span>
                                                 <div className="division-value">{doorData.posts}</div>
-                                                <button 
+                                                <button
                                                     className="division-change-value"
                                                     name="posts"
                                                     onClick={handleIncrement}
                                                 >
                                                     +
                                                 </button>
-                                                <button 
+                                                <button
                                                     className="division-change-value"
                                                     name="posts"
                                                     onClick={handleDecrement}

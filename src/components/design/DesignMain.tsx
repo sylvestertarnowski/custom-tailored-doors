@@ -7,19 +7,16 @@ import DesignNav from './DesignNav';
 
 class DesignMain extends React.Component<any, any> {
     readonly state = {
-        currentScreen: 'two', //change to one
+        currentScreen: 'one', //change to one
         type: 'single',
         width: 120,
         height: 250,
         beams: 4,
         posts: 2,
-        colorValue: "black",
-        black: "rgba(0, 0, 0, 1)",
-        grey: "rgba(121, 116, 116, 1)",
-        white: "rgba(244, 242, 242, 1)",
+        color: "black",
     }
 
-    handleClick = (e: React.MouseEvent) => {
+    handleNavClick = (e: React.MouseEvent) => {
         const id = e.currentTarget.id;
         this.setState({
             currentScreen: id,
@@ -27,10 +24,25 @@ class DesignMain extends React.Component<any, any> {
     }
 
     handleChange = (e: any) => {
-        const { name, value } = e.target;
-        this.setState({
-            [name]: value,
-        })
+        let { name, value } = e.target;
+        if (value < 0) {
+            value = 0;
+            this.setState({
+                [name]: value,
+            })
+            return;
+        } else if (value > 300) {
+            value = 300;
+            this.setState({
+                [name]: value,
+            })
+            return;
+        } else {
+            this.setState({
+                [name]: value,
+            })
+            return;
+        }
     }
 
     handleIncrement = (e: any) => {
@@ -107,6 +119,7 @@ class DesignMain extends React.Component<any, any> {
                 currentScreen={currentScreen}
                 prevStep={this.prevStep}
                 nextStep={this.nextStep}
+                handleChange={this.handleChange}
             />
         }
 
@@ -115,7 +128,7 @@ class DesignMain extends React.Component<any, any> {
                 <div className="design-navigation">
                     <DesignNav
                         currentScreen={currentScreen}
-                        handleClick={this.handleClick}
+                        handleClick={this.handleNavClick}
                     />
                 </div>
                 <div className="design-screen-container">

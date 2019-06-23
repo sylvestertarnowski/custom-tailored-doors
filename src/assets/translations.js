@@ -50,6 +50,12 @@ const translations = {
                 title: "Door division",
                 beams: "Number of beams",
                 posts: "Number of posts",
+            },
+            screenThree: {
+                title: "Choose color",
+                black: "Black",
+                gray: "Gray",
+                white: "White",
             }
         }
     },
@@ -104,6 +110,12 @@ const translations = {
                 title: "Podział drzwi",
                 beams: "Liczba belek",
                 posts: "Liczba słupów",
+            },
+            screenThree: {
+                title: "Wybierz kolor",
+                black: "Czarny",
+                gray: "Szary",
+                white: "Biały",
             }
         }
     },
