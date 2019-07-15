@@ -57,8 +57,14 @@ class DesignMain extends React.Component<any, any> {
     handleDecrement = (e: any) => {
         const { name } = e.target;
         this.setState((state: any) => {
-            return {
-                [name]: state[name] - 1
+            if(state[name] <= 0) {
+                return {
+                    [name]: state[name]
+                }
+            } else {
+                return {
+                    [name]: state[name] - 1
+                }
             }
         })
     }

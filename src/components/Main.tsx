@@ -33,33 +33,23 @@ class Main extends React.Component {
         }
     }
 
-    sendLoginCredentials = async (event: any): Promise<Response> => {
+    sendLoginCredentials = async (event: any): Promise<boolean> => {
         const email: string = event.target.email.value;
         const password: string = event.target.password.value;
-        const loginData = {
-            email: email,
-            password: password
-        }
-
-        const loginUrl = 'https://bench-api.applover.pl/api/v1/login';
-
-        return await fetch(loginUrl, {
-            method: "POST",
-            mode: "cors",
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json",
-                "Host": "example.org"
-            },
-            body: JSON.stringify(loginData)
+    
+        return await new Promise( (resolve, reject) => {
+            setTimeout(() => {
+                if(email && password) {
+                    resolve(true)
+                } else reject(false)
+            }, 2000)
         })
     }
 
     checkIfLoginIsCorrect = async (event: any): Promise<boolean> => {     
         let response = await this.sendLoginCredentials(event)
-        .then(res => res.json())
         .then(res => {
-            if (res.status === "200 OK") {
+            if (res) {
                 return true;
             } else {
                 return false;
